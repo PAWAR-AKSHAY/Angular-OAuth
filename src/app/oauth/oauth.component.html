@@ -1,0 +1,17 @@
+<div>
+    <button (click)="signInWithGoogle()">Sign In</button>
+    <button (click)="signOut()">Sign Out</button>
+</div>
+
+<div *ngIf="loggedIn; else logged_out">
+    <img [src]="user.photoUrl">
+    <div>
+        <h4>{{ user.name }}</h4>
+        <p>{{ user.email }}</p>
+    </div>
+</div>
+<div>
+    <ng-template #logged_out>
+        <h4>Sign in to continue...!</h4>
+    </ng-template>
+</div>
