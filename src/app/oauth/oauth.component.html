@@ -4,7 +4,8 @@
 </div>
 
 <div *ngIf="loggedIn; else logged_out">
-    <img [src]="user.photoUrl">
+    <img [src]="user.photoUrl" *ngIf="user.photoUrl">
+    <button (click)="verifyAtBackend()">Verify at django</button>
     <div>
         <h4>{{ user.name }}</h4>
         <p>{{ user.email }}</p>
